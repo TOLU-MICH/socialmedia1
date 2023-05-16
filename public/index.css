@@ -1,0 +1,42 @@
+/* @import "./normalize.css"; */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  /* this means that 1rem = 10px */
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  margin: auto 0;
+}
+
+.nav {
+  background-color: blue;
+  width: 100%;
+}
+
+.font-normal {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* button */
+.btn-long {
+  background-color: #ccc !important;
+  font-size: 10px !important;
+  padding: 6px 1.7rem !important;
+  font-weight: bold !important;
+  margin: 1rem !important;
+}
+
+/* divider */
+.divider {
+  height: 0.2rem;
+  margin: 0 1rem;
+  background-color: #ccc;
+}
