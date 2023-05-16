@@ -9,7 +9,15 @@ import {
   Event,
   School,
 } from "@mui/icons-material";
-import { ListItemButton, ListItemText, ListItemIcon,Button,Divider } from "@mui/material";
+import {
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
+  Button,
+  Divider,
+} from "@mui/material";
+import Friends from "./friends";
+import { Users } from "./dummyData";
 
 const data = [
   { icon: <RssFeed />, label: "Feed" },
@@ -40,7 +48,8 @@ function Nav() {
       <Button variant="contained" className="btn-long">
         Show more
       </Button>
-        <div className="divider"></div>
+      <div className="divider"></div>
+      <Friends id={35} data={Users} />
     </>
   );
 }
