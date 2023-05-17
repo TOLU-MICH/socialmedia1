@@ -1,13 +1,11 @@
-import React from 'react'
-import Nav from './nav'
-
-
+import React from "react";
+import LeftSideBar from "./leftsidebar";
 
 export default function App() {
   console.log("try");
   return (
-    <div>
-      <Nav/>
-    </div>
-  )
+    <>
+      <LeftSideBar />
+    </>
+  );
 }

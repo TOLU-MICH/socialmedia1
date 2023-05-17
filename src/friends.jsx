@@ -9,7 +9,6 @@ export default function Friends(props) {
   return (
     <>
       {props.data.map((user) => (
-        <>
           <ListItemButton
             key={user.id}
             sx={{ py: 0, minHeight: 50, margin: ".6rem" }}
@@ -19,23 +18,26 @@ export default function Friends(props) {
                 color: "inherit",
                 minWidth: "40px",
                 height: "40px",
-                marginRight:".5rem"
+                marginRight: ".5rem",
               }}
             >
               {
                 <Avatar
                   src={user.profilePicture}
                   alt=""
-                  sx={{ width: props.id, height: props.id }}
+                  sx={{ width: props.size, height: props.size }}
                 />
               }
             </ListItemIcon>
             <ListItemText
               primary={user.username}
-              primaryTypographyProps={{ fontSize: 16, fontWeight: "bolder",color:"inherit" }}
+              primaryTypographyProps={{
+                fontSize: 16,
+                fontWeight: "bolder",
+                color: "inherit",
+              }}
             />
           </ListItemButton>
-        </>
       ))}
     </>
   );

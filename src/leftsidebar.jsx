@@ -14,7 +14,6 @@ import {
   ListItemText,
   ListItemIcon,
   Button,
-  Divider,
 } from "@mui/material";
 import Friends from "./friends";
 import { Users } from "./dummyData";
@@ -31,9 +30,10 @@ const data = [
   { icon: <School />, label: "Courses" },
 ];
 
-function Nav() {
+export default function LeftSideBar() {
   return (
     <>
+    {/* category */}
       {data.map((item) => (
         <ListItemButton key={item.label} sx={{ py: 0, minHeight: 37 }}>
           <ListItemIcon sx={{ color: "inherit", minWidth: "40px" }}>
@@ -49,9 +49,10 @@ function Nav() {
         Show more
       </Button>
       <div className="divider"></div>
-      <Friends id={35} data={Users} />
+      {/* friends */}
+      <Friends size={35} data={Users} />
     </>
   );
 }
 
-export default Nav;
+
