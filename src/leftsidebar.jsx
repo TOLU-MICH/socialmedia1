@@ -32,8 +32,8 @@ const data = [
 
 export default function LeftSideBar() {
   return (
-    <>
-    {/* category */}
+    <div className="left-nav">
+      {/* category */}
       {data.map((item) => (
         <ListItemButton key={item.label} sx={{ py: 0, minHeight: 37 }}>
           <ListItemIcon sx={{ color: "inherit", minWidth: "40px" }}>
@@ -51,8 +51,6 @@ export default function LeftSideBar() {
       <div className="divider"></div>
       {/* friends */}
       <Friends size={35} data={Users} />
-    </>
+    </div>
   );
 }
-
-
