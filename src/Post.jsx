@@ -19,7 +19,7 @@ export default function Post(props) {
   return (
     <Card
       sx={{
-        maxWidth: "30rem",
+        maxWidth: "36rem",
         borderRadius: "1rem",
         padding: ".6rem",
       }}
@@ -38,7 +38,7 @@ export default function Post(props) {
             <MoreVert />
           </IconButton>
         }
-        title={props.user.username}
+        title={<strong>{props.user.username}</strong>}
         subheader={props.post.date}
         sx={style}
       />

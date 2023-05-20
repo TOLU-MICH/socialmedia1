@@ -4,14 +4,18 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import OnlineFriends from "./OnlineFriends";
 
 export default function Friends(props) {
+  let online = props.online || false;
+
   return (
     <>
       {props.data.map((user) => (
         <ListItemButton
           key={user.id}
           sx={{ py: 0, minHeight: 50, margin: ".6rem" }}
+          className="friend"
         >
           <ListItemIcon
             sx={{
@@ -21,11 +25,16 @@ export default function Friends(props) {
               marginRight: ".5rem",
             }}
           >
-            <Avatar
-              src={user.profilePicture}
-              alt=""
-              sx={{ width: props.size, height: props.size }}
-            />
+            {/* if the friends are not online it will run these code */}
+            {!online && (
+              <Avatar
+                src={user.profilePicture}
+                alt=""
+                sx={{ width: props.size, height: props.size }}
+              />
+            )}
+            {/* if the friends are online it will run these code */}
+            {online && <OnlineFriends image={user.profilePicture} />}
           </ListItemIcon>
           <ListItemText
             primary={user.username}

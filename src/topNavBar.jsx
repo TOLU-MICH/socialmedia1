@@ -7,6 +7,7 @@ const icons = [
   <Notifications color="action" />,
 ];
 
+const style = { color: "white", fontWeight: "bold" };
 export default function TopNavBar() {
   return (
     <nav className="nav">
@@ -16,10 +17,10 @@ export default function TopNavBar() {
         <input type="text" placeholder="Search for friends, post or video" />
       </div>
       <Stack spacing={-1} direction="row">
-        <Button variant="text" sx={{ color: "white" }}>
+        <Button variant="text" sx={style}>
           Homepage
         </Button>
-        <Button variant="text" sx={{ color: "white" }}>
+        <Button variant="text" sx={style}>
           Timeline
         </Button>
       </Stack>

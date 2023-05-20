@@ -15,7 +15,7 @@ export default function Share() {
       <Stack spacing={1} direction="row" className="share-text">
         <Avatar
           src="/assets/person/1.jpeg"
-          alt=""
+          alt="Profile Picture"
           sx={{ width: 56, height: 56 }}
         />
         <textarea
@@ -25,7 +25,7 @@ export default function Share() {
         />
       </Stack>
       <div className="divider"></div>
-      <Stack spacing={5} direction="row">
+      <Stack spacing={5} direction="row" justifyContent={"center"}>
         <Stack spacing={1} direction="row">
           {icons.map((item, index) => {
             return (
