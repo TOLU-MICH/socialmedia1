@@ -183,7 +183,8 @@ strong {
   width: 2rem;
 }
 
-.right-side--bar {
+.right-side--bar,
+.right-side--profile__bar {
   margin-top: 4rem !important;
   max-width: 25rem;
   border-radius: 1rem;
@@ -200,7 +201,7 @@ strong {
 }
 
 .back-img {
-  width: 79vw;
+  width: 80.8vw;
   height: 17rem;
 }
 .content-container {
@@ -225,10 +226,38 @@ strong {
   font-size: 0.9rem;
 }
 .username {
-  font-weight: bolder;
-  font-size: 1.3rem;
+  margin: 0;
 }
 
 .content-child {
   margin-left: 1rem !important;
+}
+
+/* right side profile bar */
+.right-side--profile__bar {
+  margin-left: 1rem;
+}
+
+.city,
+.from,
+.relationship {
+  padding-left: 1rem !important;
+}
+
+.profile-friends {
+  display: flex;
+  max-width: 23rem;
+  flex-wrap: wrap;
+}
+.profile-friends p {
+  text-align: center;
+}
+.profile-friend {
+  max-width: 7.65rem;
+  margin: 0.2rem;
+}
+.profile-friend--img {
+  width: 6.7rem;
+  height: 6.7rem;
+  border-radius: 1rem;
 }

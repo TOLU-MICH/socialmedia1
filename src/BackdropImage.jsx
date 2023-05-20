@@ -11,7 +11,7 @@ export default function BackdropImage() {
           alt="Proflie Picture"
           className="pic"
         />
-        <p className="username">Travis Bennett</p>
+        <h2 className="username">Travis Bennett</h2>
         <p>Hello my friends</p>
       </span>
     </div>

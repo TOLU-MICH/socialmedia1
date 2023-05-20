@@ -6,6 +6,7 @@ import { Posts, Users } from "./dummyData";
 import { Stack } from "@mui/material";
 import Feed from "./feed";
 import BackdropImage from "./BackdropImage";
+import RightProfileBar from "./RightProfileBar";
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
               <Share />
               <Feed data={Posts} Users={Users} />
             </div>
-            <RightSideBar />
+            <RightProfileBar data={Users} />
           </Stack>
         </Stack>
       </main>
