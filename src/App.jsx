@@ -10,14 +10,15 @@ import RightProfileBar from "./RightProfileBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route></Route>
-      </Switch>
-    </Router>
+    // <Router>
+    //   <Switch>
+    //     <Route></Route>
+    //   </Switch>
+    // </Router>
     // <>
     //   <TopNavBar />
     //   <main className="content-container">
