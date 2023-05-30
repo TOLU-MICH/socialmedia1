@@ -1,11 +1,12 @@
-import LeftSideBar from "./leftsidebar";
-import TopNavBar from "./topNavBar";
-import Share from "./Share";
-import { Posts, Users } from "./dummyData";
+import LeftSideBar from "../leftsidebar";
+import TopNavBar from "../topNavBar";
+import Share from "../Share";
+import { Posts, Users } from "../dummyData";
 import { Stack } from "@mui/material";
-import Feed from "./feed";
-import BackdropImage from "./BackdropImage";
-import RightProfileBar from "./RightProfileBar";
+import Feed from "../feed";
+import BackdropImage from "../BackdropImage";
+import RightProfileBar from "../RightProfileBar";
+
 export default function Profile() {
   return (
     <>
