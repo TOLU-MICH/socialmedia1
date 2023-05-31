@@ -1,10 +1,10 @@
-import LeftSideBar from "../leftsidebar";
-import TopNavBar from "../topNavBar";
-import Share from "../Share";
+import LeftSideBar from "../components/leftsidebar";
+import TopNavBar from "../components/topNavBar";
+import Share from "../components/Share";
 import { Posts, Users } from "../dummyData";
 import { Stack } from "@mui/material";
-import Feed from "../feed";
-import RightSideBar from "../RightSideBar";
+import Feed from "../components/feed";
+import RightSideBar from "../components/RightSideBar";
 
 export default function Profile() {
   return (

@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardMedia, IconButton } from "@mui/material";
 import React from "react";
 import Friends from "./friends";
-import { Users } from "./dummyData";
+import { Users } from "../dummyData";
 
 export default function RightSideBar() {
   return (

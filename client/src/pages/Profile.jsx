@@ -1,10 +1,10 @@
-import LeftSideBar from "../leftsidebar";
-import TopNavBar from "../topNavBar";
-import Share from "../Share";
+import LeftSideBar from "../components/leftsidebar";
+import TopNavBar from "../components/topNavBar";
+import Share from "../components/Share";
 import { Posts, Users } from "../dummyData";
-import Feed from "../feed";
-import BackdropImage from "../BackdropImage";
-import RightProfileBar from "../RightProfileBar";
+import Feed from "../components/feed";
+import BackdropImage from "../components/BackdropImage";
+import RightProfileBar from "../components/RightProfileBar";
 
 export default function Profile() {
   return (

@@ -16,7 +16,7 @@ import {
   Button,
 } from "@mui/material";
 import Friends from "./friends";
-import { Users } from "./dummyData";
+import { Users } from "../dummyData";
 
 const data = [
   { icon: <RssFeed />, label: "Feed" },
