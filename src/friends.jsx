@@ -6,6 +6,8 @@ import {
 } from "@mui/material";
 import OnlineFriends from "./OnlineFriends";
 
+const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
 export default function Friends(props) {
   let online = props.online || false;
 
@@ -28,13 +30,13 @@ export default function Friends(props) {
             {/* if the friends are not online it will run these code */}
             {!online && (
               <Avatar
-                src={user.profilePicture}
+                src={PF + user.profilePicture}
                 alt=""
                 sx={{ width: props.size, height: props.size }}
               />
             )}
             {/* if the friends are online it will run these code */}
-            {online && <OnlineFriends image={user.profilePicture} />}
+            {online && <OnlineFriends image={PF + user.profilePicture} />}
           </ListItemIcon>
           <ListItemText
             primary={user.username}

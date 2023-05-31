@@ -10,11 +10,14 @@ import {
 import { MoreVert } from "@mui/icons-material";
 import { ACTION } from "./feed";
 
+const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
 let style = { padding: "0" };
 const images = [
-  <img src="assets/like.png" alt="" className="post--button-image" />,
-  <img src="assets/heart.png" alt="" className="post--button-image" />,
+  <img src={PF + "like.png"} alt="" className="post--button-image" />,
+  <img src={PF + "heart.png"} alt="" className="post--button-image" />,
 ];
+
 export default function Post(props) {
   return (
     <Card
@@ -28,7 +31,7 @@ export default function Post(props) {
       <CardHeader
         avatar={
           <Avatar
-            src={props.user.profilePicture}
+            src={PF + props.user.profilePicture}
             alt=""
             sx={{ width: 56, height: 56 }}
           />
@@ -44,7 +47,12 @@ export default function Post(props) {
       />
       <CardContent sx={{ padding: "1rem 0" }}>{props.post.desc}</CardContent>
 
-      <CardMedia component="img" height="400" image={props.post.photo} alt="" />
+      <CardMedia
+        component="img"
+        height="400"
+        image={PF + props.post.photo}
+        alt=""
+      />
 
       <CardActions sx={{ padding: "8px 0", position: "relative" }}>
         {images.map((image, index) => {

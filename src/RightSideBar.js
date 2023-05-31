@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardMedia, IconButton, Stack } from "@mui/material";
+import { Card, CardHeader, CardMedia, IconButton } from "@mui/material";
 import React from "react";
 import Friends from "./friends";
 import { Users } from "./dummyData";

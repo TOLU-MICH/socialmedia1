@@ -1,5 +1,6 @@
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 import { Button, Stack, Badge, Avatar } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const icons = [
   <Person color="action" />,
@@ -11,7 +12,9 @@ const style = { color: "white", fontWeight: "bold" };
 export default function TopNavBar() {
   return (
     <nav className="nav">
-      <h1>Lamasocial</h1>
+      <Link to="/" class="logo">
+        <h1>Lamasocial</h1>
+      </Link>
       <div className="input-group">
         <Search />
         <input type="text" placeholder="Search for friends, post or video" />

@@ -1,19 +1,18 @@
-import { Avatar } from "@mui/material";
 import React from "react";
+
+const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
 export default function BackdropImage() {
   return (
-    <div className="backdrop">
-      <img src="./assets/post/3.jpeg" alt="" className="back-img" />
-      <span className="profile-pic">
-        <Avatar
-          src="assets/person/7.jpeg"
-          alt="Proflie Picture"
-          className="pic"
-        />
-        <h2 className="username">Travis Bennett</h2>
-        <p>Hello my friends</p>
-      </span>
+    <div className="profileRightTop">
+      <div className="profileCover">
+        <img className="profileCoverImg" src={PF + "post/3.jpeg"} alt="" />
+        <img src={PF + "person/7.jpeg"} alt="" className="profileUserImg" />
+      </div>
+      <div className="profileInfo">
+        <h4 className="profileInfoName">Safak Kocaoglu</h4>
+        <span className="profileInfoDesc">Hello my friends!</span>
+      </div>
     </div>
   );
 }
