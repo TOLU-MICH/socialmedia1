@@ -13,8 +13,7 @@ export default function Profile() {
       <Stack spacing={3} direction={"row"}>
         <LeftSideBar />
         <div className="content-child">
-          <Share />
-          <Feed data={Posts} Users={Users} />
+          <Feed />
         </div>
         <RightSideBar data={Users} />
       </Stack>

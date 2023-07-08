@@ -1,4 +1,23 @@
+import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { useContext, useRef } from "react";
+import { loginCall } from "../apiCalls";
+import { AuthContext } from "../context/AuthContext";
+import CircularProgress from "@mui/material/CircularProgress";
+
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+  };
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -10,13 +29,40 @@ export default function Login() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <button className="loginButton">Log In</button>
+            <form onSubmit={handleClick} className="loginBox">
+              <TextField
+                id="outlined-basic"
+                label="email"
+                variant="outlined"
+                type="email"
+                required
+                inputRef={email}
+              />
+              <TextField
+                id="outlined-basic"
+                label="password"
+                variant="outlined"
+                type="password"
+                required
+                inputProps={{ minLength: 6 }}
+                inputRef={password}
+              />
+              <button className="loginButton" disabled={isFetching}>
+                {isFetching ? (
+                  <CircularProgress style={{ color: "white" }} />
+                ) : (
+                  "Log In"
+                )}
+              </button>
+            </form>
             <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
-              Create a New Account
-            </button>
+            <Button variant="contained" color="success" disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress style={{ color: "white" }} />
+              ) : (
+                "Create a New Account"
+              )}
+            </Button>
           </div>
         </div>
       </div>

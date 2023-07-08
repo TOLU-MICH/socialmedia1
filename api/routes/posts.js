@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { default: userEvent } = require("@testing-library/user-event");
 const Posts = require("../models/Posts");
 const User = require("../models/User");
 
@@ -69,18 +68,33 @@ router.get("/:id", async (req, res) => {
 });
 
 //get timeline posts
-router.get("/timeline/all", async (req, res) => {
+router.get("/timeline/:userId", async (req, res) => {
   try {
-    const currentUser = await User.findById(req.body.userId);
+    const currentUser = await User.findById(req.params.userId);
     const userPost = await Posts.find({ userId: currentUser._id });
     const friendPosts = await Promise.all(
       currentUser.followings.map((friendId) => {
         return Posts.find({ userId: friendId });
       })
     );
-    res.json(userPost.concat(...friendPosts));
+    res.status(200).json(userPost.concat(...friendPosts));
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+//get users all posts
+router.get("/profile/:username", async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.params.username });
+    const posts = await Posts.find({
+      userId: user._id,
+    });
+    res.send(posts);
+  } catch (err) {
+    console.error(err); // Log the error object
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

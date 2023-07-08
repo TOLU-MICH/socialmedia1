@@ -1,6 +1,8 @@
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 import { Button, Stack, Badge, Avatar } from "@mui/material";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const icons = [
   <Person color="action" />,
@@ -10,9 +12,12 @@ const icons = [
 
 const style = { color: "white", fontWeight: "bold" };
 export default function TopNavBar() {
+  const { user } = useContext(AuthContext);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <nav className="nav">
-      <Link to="/" class="logo">
+      <Link to="/" className="logo">
         <h1>Lamasocial</h1>
       </Link>
       <div className="input-group">
@@ -36,12 +41,13 @@ export default function TopNavBar() {
           );
         })}
       </Stack>
-
-      <Avatar
-        src="/assets/person/1.jpeg"
-        alt=""
-        sx={{ width: 30, height: 30 }}
-      />
+      <Link to={`/profile/${user.username}`}>
+        <Avatar
+          src={user.profilePicture && PF + user.profilePicture}
+          alt=""
+          sx={{ width: 30, height: 30 }}
+        />
+      </Link>
     </nav>
   );
 }

@@ -18,6 +18,7 @@ p {
 }
 
 .font-normal {
+  color: rgba(0, 0, 0, 0.87);
   font-size: 13px;
   font-weight: bold;
 }
@@ -71,9 +72,11 @@ nav h1 {
 /* Left side bar */
 
 .left-nav {
+  flex: 3;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
   max-width: 21rem;
-  height: 90vh;
-  overflow: hidden;
   overflow-y: scroll;
 }
 
@@ -166,6 +169,22 @@ textarea {
   margin: 1.3rem 2rem;
 }
 
+.sharedImgContainer {
+  padding: 0 1rem 0.5rem 1rem;
+  position: relative;
+}
+.shareImg {
+  width: 100%;
+  object-fit: cover;
+}
+.shareCancelImg {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 /* Post */
 .card {
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68) !important;
@@ -225,15 +244,12 @@ strong {
 }
 
 .profileUserImg {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
   object-fit: cover;
-  position: absolute;
+  position: absolute !important;
   left: 0;
   right: 0;
   margin: auto;
-  top: 150px;
+  top: 171px;
   border: 3px solid white;
 }
 
@@ -280,11 +296,6 @@ strong {
 .profile-friend {
   max-width: 7.65rem;
   margin: 0.2rem;
-}
-.profile-friend--img {
-  width: 6.7rem;
-  height: 6.7rem;
-  border-radius: 1rem;
 }
 
 /* LOGIN/REGISTER */
