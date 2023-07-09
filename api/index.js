@@ -7,9 +7,10 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
-const multer = require("multer")
-const path = require("path")
-
+const conversationRoute = require("./routes/conversations");
+const messageRoute = require("./routes/messages");
+const multer = require("multer");
+const path = require("path");
 
 dotenv.config();
 
@@ -17,9 +18,9 @@ mongoose
   .connect(process.env.MONGO_URL, { UseNewUrlParser: true })
   .then(() => console.log("connected to MongoDB"));
 
-app.use("/images", express.static(path.join(__dirname,"public/images")))
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
-  // middleware
+// middleware
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
@@ -29,7 +30,7 @@ const storage = multer.diskStorage({
     cb(null, "public/images");
   },
   filename: (req, file, cb) => {
-    cb(null,req.body.name);
+    cb(null, req.body.name);
   },
 });
 
@@ -45,6 +46,8 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
+app.use("/api/conversations", conversationRoute);
+app.use("/api/messages", messageRoute);
 
 app.listen(8080, () => {
   console.log("Backend server is running");

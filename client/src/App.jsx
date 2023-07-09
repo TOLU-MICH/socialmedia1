@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Messenger from "./pages/Messenger";
 
 export default function App() {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,10 @@ export default function App() {
         <Route
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}
+        />
+        <Route
+          path="/messenger"
+          element={!user ? <Navigate to="/" /> : <Messenger />}
         />
         <Route path="/profile/:username" element={<Profile />} />
       </Routes>
